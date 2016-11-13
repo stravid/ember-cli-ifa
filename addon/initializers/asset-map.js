@@ -1,5 +1,5 @@
 /* global window, __assetMapFilename__ */
-import RSVP from 'rsvp';
+import Ember from 'ember';
 import $ from 'jquery';
 import AssetMap from '../services/asset-map';
 
@@ -14,7 +14,7 @@ export function initialize(app) {
     return;
   }
 
-  const promise = new RSVP.Promise((resolve, reject) => {
+  const promise = new Ember.RSVP.Promise((resolve, reject) => {
     $.getJSON(assetMapFile, resolve).fail(reject);
   });
 
